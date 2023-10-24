@@ -26,27 +26,27 @@ require_once("header.php");
                 <label for="selectDimensions">Dimensions :</label>
                 <select name="dimensions" id="selectDimensions">
                     <option value="" disabled selected>Selectionnez la dimension</option>
-                    <option value="1">90x190</option>
-                    <option value="2">140x90</option>
-                    <option value="3">160x200</option>
-                    <option value="4">180x200</option>
-                    <option value="5">200x200</option>
+                    <option value="90x190">90x190</option>
+                    <option value="140x90">140x90</option>
+                    <option value="160x200">160x200</option>
+                    <option value="180x200">180x200</option>
+                    <option value="200x200">200x200</option>
                 </select>
             </div>
 
             <div class="form-group">
-                <label for="image">Image</label>
-                <input type="text" id="image" name="image" value="<?= isset($data["poster"]) ? $data["poster"] : "" ?>" required>
+                <label for="poster">Image :</label>
+                <input type="text" id="poster" name="poster" value="<?= isset($data["poster"]) ? $data["poster"] : "" ?>" required>
             </div>
 
             <div class="form-group">
-                <label for="prix">Prix</label>
-                <input type="number" id="prix" name="prix" min="0" value="<?= isset($data["prix"]) ? $data["prix"] : "" ?>" required>
+                <label for="prix">Prix :</label>
+                <input type="number" id="prix" name="prix" min="0" value="<?= isset($data["prix"]) ? $data["prix"] : 0 ?>" required>
             </div>
 
             <div class="form-group">
-                <label for="promotion">Promotion</label>
-                <input type="number" id="promotion" name="promotion" min="0" value="<?= isset($data["promotion"]) ? $data["promotion"] : "" ?>">
+                <label for="promotion">Promotion :</label>
+                <input type="number" id="promotion" name="promotion" min="0" value="<?= isset($data["promotion"]) ? $data["promotion"] : 0 ?>">
             </div>
 
             <div class="submit">

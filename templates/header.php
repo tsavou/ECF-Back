@@ -12,8 +12,7 @@
 
         <nav>
             <ul>
-                <li><a href="./">Accueil</a></li>
-                <li><a href="">A propos</a></li>
+                <li><a href="./">Catalogue</a></li>
                 <li><a href="add">Ajouter un matelas</a></li>
             </ul>
         </nav>

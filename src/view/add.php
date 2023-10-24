@@ -13,7 +13,7 @@ class AddView
     public function render()
     {
         $message = "";
-        if (!empty($_POST)) { {
+        if (!empty($_POST)) { 
                 $data = $this->controller->getDataForm();
 
                 if ($this->controller->add()) {
@@ -21,9 +21,8 @@ class AddView
                 } else {
                     $message = "Erreur de base de données";
                 }
-                
-                require($this->template);
             }
-        }
+            require($this->template);
+        
     }
 }
