@@ -43,8 +43,8 @@ require_once("header.php");
             </div>
 
             <div class="form-group">
-                <label for="promotion">Promotion :</label>
-                <input type="number" id="promotion" name="promotion" min="0" value="<?= isset($data["promotion"]) ? $data["promotion"] : 0 ?>">
+                <label for="promotion">Réduction :</label>
+                <input type="number" id="promotion" name="promotion" min="0" value="<?= isset($data["promotion"]) ? $data["promotion"] : 0 ?>" >
             </div>
 
             <div class="submit">

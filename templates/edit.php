@@ -42,7 +42,7 @@ require_once("header.php");
             </div>
 
             <div class="form-group">
-                <label for="promotion">Promotion :</label>
+                <label for="promotion">Réduction :</label>
                 <input type="number" id="promotion" name="promotion" min="0" value="<?= $matelas["promotion"] ? $matelas["promotion"] : 0 ?>">
             </div>
 
