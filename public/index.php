@@ -26,6 +26,11 @@ $pages = array(
         "model" => "DeleteModel",
         "view" => "DeleteView",
         "controller" => "DeleteController"
+    ),
+    "edit" => array(
+        "model" => "EditModel",
+        "view" => "EditView",
+        "controller" => "EditController"
     )
 );
 

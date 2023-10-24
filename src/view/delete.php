@@ -15,7 +15,7 @@ class DeleteView
             if ($this->controller->delete($matelasId)) {
                 header("Location: index.php");
             } else {
-                echo "Erreur de base de donneé";
+                echo "Erreur de base de donnée";
             }
         }
     }

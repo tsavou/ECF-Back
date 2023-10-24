@@ -8,7 +8,8 @@ class AddController
         $this->model = $model;
     }
 
-    public function getDataForm(){
+    public function getDataForm()
+    {
         return array(
             'name' => $this->model->name,
             'marque' => $this->model->marque,
@@ -19,7 +20,8 @@ class AddController
         );
     }
 
-    public function add() : bool {
+    public function add(): bool
+    {
 
         $query = $this->model->db->prepare("INSERT INTO matelas (name, marque, dimensions, poster, prix, promotion) VALUES (:name, :marque, :dimensions, :poster, :prix, :promotion)");
         $query->bindParam(':name', $this->model->name);
@@ -29,11 +31,13 @@ class AddController
         $query->bindParam(':prix', $this->model->prix);
         $query->bindParam(':promotion', $this->model->promotion);
 
-        if ($query->execute()){
+        if ($query->execute()) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
+    
+}
 
-   }
+  
