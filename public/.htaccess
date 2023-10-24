@@ -1,0 +1,9 @@
+# Activer le module de réécriture  d'URL
+RewriteEngine on
+
+# Lister les différentes règles de réecriture 
+RewriteRule ^add$   ./index.php?page=add
+
+
+
+RewriteRule ^matelas/([0-9]+)$ index.php?page=user&id=$1
