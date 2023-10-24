@@ -6,4 +6,3 @@ RewriteRule ^add$   ./index.php?page=add
 
 
 
-RewriteRule ^matelas/([0-9]+)$ index.php?page=user&id=$1
