@@ -14,6 +14,7 @@
             <ul>
                 <li><a href="./">Catalogue</a></li>
                 <li><a href="add">Ajouter un matelas</a></li>
+                <li><a href="about">About</a></li>
             </ul>
         </nav>
 

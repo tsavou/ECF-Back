@@ -31,6 +31,11 @@ $pages = array(
         "model" => "EditModel",
         "view" => "EditView",
         "controller" => "EditController"
+    ),
+    "about" => array(
+        "model" => "AboutModel",
+        "view" => "AboutView",
+        "controller" => "AboutController"
     )
 );
 

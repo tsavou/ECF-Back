@@ -3,3 +3,5 @@ RewriteEngine on
 
 # Lister les différentes règles de réecriture 
 RewriteRule ^add$   ./index.php?page=add
+RewriteRule ^about ./index.php?page=about
+
