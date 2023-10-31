@@ -17,7 +17,6 @@ class AddModel
             $this->name = trim(strip_tags($_POST['name']));
             $this->marque = trim(strip_tags($_POST['marque']));
             $this->dimensions = trim(strip_tags($_POST['dimensions']));
-            $this->poster = trim(strip_tags($_POST['poster']));
             $this->prix = trim(strip_tags($_POST['prix']));
             $this->promotion = trim(strip_tags($_POST['promotion']));
         }

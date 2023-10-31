@@ -4,11 +4,11 @@ require_once("header.php");
 ?>
 
 <div class="container">
-
+  
     <div class="form">
         <h2>Modifier le produit</h2>
         <?=$message?>
-        <form action="" method="post">
+        <form action="" method="post" enctype="multipart/form-data">
 
             <div class="form-group">
                 <label for="name">Nom du matelas :</label>
@@ -17,23 +17,25 @@ require_once("header.php");
 
             <div class="form-group">
                 <label for="marque">Marque :</label>
-                <input type="text" id="marque" name="marque" value="<?= $matelas["marque"] ? $matelas["marque"] : "" ?>" required>
+                    <select name="marque" id="marque">
+                    <?php foreach ($brands as $brand) { ?>
+                        <option value="<?= $brand["id"] ?>" <?= isset($matelas["marque"]) && ($brand["name"] == $matelas["marque"]) ? "selected" : "" ?>><?= $brand["name"] ?></option>
+                    <?php } ?>
+                </select>
             </div>
 
             <div class="form-group">
                 <label for="selectDimensions">Dimensions :</label>
                 <select name="dimensions" id="selectDimensions">
-                    <option value="90x190" <?= $matelas["dimensions"] && ($matelas["dimensions"] === "90x190")? "selected" : "" ?>> 90x190</option>
-                    <option value="140x90" <?= $matelas["dimensions"] && ($matelas["dimensions"] === "140x90")? "selected" : "" ?>>140x90</option>
-                    <option value="160x200" <?= $matelas["dimensions"] && ($matelas["dimensions"] === "160x200")? "selected" : "" ?>>160x200</option>
-                    <option value="180x200" <?= $matelas["dimensions"] && ($matelas["dimensions"] === "180x200")? "selected" : "" ?>>180x200</option>
-                    <option value="200x200" <?= $matelas["dimensions"] && ($matelas["dimensions"] === "200x200")? "selected" : "" ?>>200x200</option>
+                <?php foreach ($dimensions as $dimension) { ?>
+                        <option value="<?= $dimension["id"] ?>" <?= isset($matelas["dimensions"]) && ($dimension["name"] == $matelas["dimensions"]) ? "selected" : "" ?>><?= $dimension["name"] ?></option>
+                    <?php } ?>
                 </select>
             </div>
 
             <div class="form-group">
                 <label for="poster">Image :</label>
-                <input type="text" id="poster" name="poster" value="<?= $matelas["poster"] ? $matelas["poster"] : "" ?>" required>
+                <input type="file" id="poster" name="poster">
             </div>
 
             <div class="form-group">

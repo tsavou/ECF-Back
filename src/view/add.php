@@ -13,8 +13,16 @@ class AddView
     public function render()
     {
         $message = "";
+        $brands = $this->controller->getBrands();
+        $dimensions = $this->controller->getDimensions();
+        
         if (!empty($_POST)) {
+            if (isset($_FILES["poster"]) && $_FILES["poster"]["error"] === UPLOAD_ERR_OK) {
+                $this->controller->uploadImage($_FILES["poster"]);
+            }
+
             $data = $this->controller->getDataForm();
+
 
             if ($this->controller->add()) {
                 header("Location: index.php");

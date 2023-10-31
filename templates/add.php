@@ -7,8 +7,8 @@ require_once("header.php");
 
     <div class="form">
         <h2>Ajouter un matelas</h2>
-        <?=$message?>
-        <form action="" method="post">
+        <?= $message ?>
+        <form action="" method="post" enctype="multipart/form-data">
 
             <div class="form-group">
                 <label for="name">Nom du matelas :</label>
@@ -17,24 +17,27 @@ require_once("header.php");
 
             <div class="form-group">
                 <label for="marque">Marque :</label>
-                <input type="text" id="marque" name="marque" value="<?= isset($data["marque"]) ? $data["marque"] : "" ?>" required>
+                <select name="marque" id="marque">
+                <option value="" disabled selected>Selectionnez la marque</option>
+                    <?php foreach ($brands as $brand) { ?>
+                        <option value="<?= $brand["id"] ?>"><?= $brand["name"] ?></option>
+                    <?php } ?>
+                </select>
             </div>
 
             <div class="form-group">
                 <label for="selectDimensions">Dimensions :</label>
                 <select name="dimensions" id="selectDimensions">
                     <option value="" disabled selected>Selectionnez la dimension</option>
-                    <option value="90x190">90x190</option>
-                    <option value="140x90">140x90</option>
-                    <option value="160x200">160x200</option>
-                    <option value="180x200">180x200</option>
-                    <option value="200x200">200x200</option>
+                    <?php foreach ($dimensions as $dimension) { ?>
+                        <option value="<?= $dimension["id"] ?>"><?= $dimension["name"] ?></option>
+                    <?php } ?>
                 </select>
             </div>
 
             <div class="form-group">
                 <label for="poster">Image :</label>
-                <input type="text" id="poster" name="poster" value="<?= isset($data["poster"]) ? $data["poster"] : "" ?>" required>
+                <input type="file" id="poster" name="poster" required>
             </div>
 
             <div class="form-group">
@@ -44,7 +47,7 @@ require_once("header.php");
 
             <div class="form-group">
                 <label for="promotion">Réduction :</label>
-                <input type="number" id="promotion" name="promotion" min="0" value="<?= isset($data["promotion"]) ? $data["promotion"] : 0 ?>" >
+                <input type="number" id="promotion" name="promotion" min="0" value="<?= isset($data["promotion"]) ? $data["promotion"] : 0 ?>">
             </div>
 
             <div class="submit">

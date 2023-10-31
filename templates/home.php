@@ -13,7 +13,7 @@ require_once("header.php");
 
         <?php foreach ($data as $matelas) { ?>
             <div class="card">
-                <img src="<?= $matelas['poster'] ?>" alt="<?= $matelas['name'] ?>">
+                <img src="./assets/img/poster/<?= $matelas['poster'] ?>" alt="<?= $matelas['name'] ?>">
                 <div class="card__content">
                     <h2 class="card__title"><?= $matelas['name'] ?></h2>
                     <ul>

@@ -10,7 +10,9 @@ class HomeController
 
     public function getMatelas()
     {
-        $query = $this->model->db->query("SELECT * FROM matelas ORDER BY id");
+        $query = $this->model->db->query("SELECT matelas.*, brands.name AS marque, dimensions.name AS dimensions FROM matelas
+        INNER JOIN dimensions ON matelas.id_dimension = dimensions.id
+        INNER JOIN brands ON matelas.id_brand = brands.id");
         $query->execute();
         $matelas = $query->fetchAll(PDO::FETCH_ASSOC);
 
